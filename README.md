@@ -1,1 +1,1 @@
-# widerange
+# widerangelogistic
