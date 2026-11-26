@@ -7,7 +7,11 @@
         <div class="top-strip">
             <div class="container top-strip-content">
                 <div class="top-logo">
-                    <img src="{% static 'frontend/images/whiteandbluewidestar.png' %}" style='width:150px; height:auto;' alt="WIDE Range Logistics LLC" />
+                    {% if site_settings.white_logo %}
+                        <img src="{{ site_settings.white_logo.url }}" style='width:150px; height:auto;' alt="{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}" />
+                    {% else %}
+                        <img src="{% static 'frontend/images/whiteandbluewidestar.png' %}" style='width:150px; height:auto;' alt="{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}" />
+                    {% endif %}
                 </div>
 
                 <div class="top-contact-info">
@@ -26,7 +30,7 @@
                         </div>
                         <div>
                             <div class="contact-label">Call Us</div>
-                            <a class="contact-value" href="tel:(216)677-1799">(216)677-1799</a>
+                            <a class="contact-value" href="tel:{{ site_settings.phone|default:'(216)677-1799' }}">{{ site_settings.phone|default:'(216)677-1799' }}</a>
                         </div>
                     </div>
 
@@ -44,8 +48,8 @@
                         </div>
                         <div>
                             <div class="contact-label">Send Message</div>
-                            <a class="contact-value" href="mailto:chris@northernstarlogisticsinc.com">
-                                chris@northernstarlogisticsinc.com
+                            <a class="contact-value" href="mailto:{{ site_settings.email|default:'chris@northernstarlogisticsinc.com' }}">
+                                {{ site_settings.email|default:'chris@northernstarlogisticsinc.com' }}
                             </a>
                         </div>
                     </div>
@@ -70,7 +74,11 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <img src="{% static 'frontend/images/widerangelogo.png' %}" alt="WIDE Range Logistics LLC" />
+                    {% if site_settings.logo %}
+                        <img src="{{ site_settings.logo.url }}" alt="{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}" />
+                    {% else %}
+                        <img src="{% static 'frontend/images/widerangelogo.png' %}" alt="{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}" />
+                    {% endif %}
                 </div>
 
                 <div class="nav-content" id="navContent">

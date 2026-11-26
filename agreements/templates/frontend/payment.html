@@ -29,7 +29,7 @@
   <section class="pay-section">
     <div class="container pay-grid">
       <div class="pay-text">
-        <span class="overline-chip">WIDE Range Logistics LLC</span>
+        <span class="overline-chip">{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}</span>
         <h2>Important Payment Guidelines</h2>
         <p>
           Only send payments after confirming your invoice or service request with our team. You will receive a digital
@@ -38,7 +38,7 @@
           immediately.
           If paying via Wire Transfer or BTC, processing times may vary slightly depending on your bank or wallet.
         </p>
-        <a class="cta-button" href="about.html">Get In Touch <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></span></a>
+        <a class="cta-button" href="{% url 'agreements:about' %}">Get In Touch <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></span></a>
       </div>
       <div class="pay-media">
         <img src="{% static 'frontend/images/payment1.png' %}" alt="Checklist" />
@@ -50,10 +50,10 @@
   <section class="pay-section" id="methods">
     <div class="container pay-grid reverse">
       <div class="pay-media">
-        <img src=" {% static 'frontend/images/payement2.jpg' %}" alt="POS" />
+        <img src="{% static 'frontend/images/payement2.jpg' %}" alt="POS" />
       </div>
       <div class="pay-text">
-        <span class="overline-chip">WIDE Range Logistics LLC</span>
+        <span class="overline-chip">{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}</span>
         <h2>How to Pay the Service Fee</h2>
         <p>We offer multiple secure and flexible payment options to make the process fast, easy, and convenient for
           every driver or carrier.</p>
@@ -75,7 +75,7 @@
   <section class="pay-section" id="assist">
     <div class="container pay-grid">
       <div class="pay-text">
-        <span class="overline-chip">WIDE Range Logistics LLC</span>
+        <span class="overline-chip">{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}</span>
         <h2>Need Help Making a Payment?</h2>
         <p>If you’re unfamiliar with any platform, our team will walk you through step‑by‑step to make sure everything
           goes smoothly.</p>
@@ -85,7 +85,7 @@
         <a class="cta-button" href="{% url 'agreements:about' %}">Get In Touch <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></span></a>
       </div>
       <div class="pay-media">
-        <img src="{% static 'frontend/images/payement3.png' %}" Card and phone" />
+        <img src="{% static 'frontend/images/payement3.png' %}" alt="Card and phone" />
       </div>
     </div>
   </section>
@@ -97,7 +97,7 @@
         <img src="{% static 'frontend/images/payement4.avif' %}" alt="Third‑party accounts" />
       </div>
       <div class="pay-text">
-        <span class="overline-chip">WIDE Range Logistics LLC</span>
+        <span class="overline-chip">{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}</span>
         <h2>Why We Use Third‑Party Accounts</h2>
         <ul class="pay-list">
           <li>Faster confirmation and service activation</li>
@@ -108,7 +108,7 @@
         <h3>What You’ll Receive After Payment</h3>
         <p class="muted">Digital receipt confirming payment, direct contact with your assigned rep or dispatcher,
           official onboarding or next steps within 1–2 hours (often sooner).</p>
-        <a class="cta-button" href="about.html">Get In Touch <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></span></a>
+        <a class="cta-button" href="{% url 'agreements:about' %}">Get In Touch <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></span></a>
       </div>
     </div>
   </section>

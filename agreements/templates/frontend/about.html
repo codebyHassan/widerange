@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>About • WIDE Range Logistics LLC</title>
+      <title>About • {{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}</title>
   <meta name="robots" content="index,follow,noarchive" />
   <meta name="googlebot" content="noarchive" />
   <link rel="stylesheet" href="{% static 'frontend/css/styles.css' %}" />
@@ -21,7 +21,7 @@
   <section class="about-hero">
             <img src="{% static 'frontend/images/hero.png' %}" alt="About WIDE Range Logistics LLC" />
     <div class="container about-hero-content">
-              <span class="section-badge">WIDE Range Logistics LLC</span>
+              <span class="section-badge">{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}</span>
       <h1>Reliable and Secure Transportation Delivered On Time</h1>
       <p>From freight solutions to compliance support — we help drivers and carriers move smarter, faster, and with peace of mind.</p>
     </div>
@@ -31,7 +31,7 @@
   <section class="about-section" id="about">
     <div class="container about-grid">
       <div class="about-text reveal">
-        <span class="overline-chip">WIDE Range Logistics LLC</span>
+        <span class="overline-chip">{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}</span>
         <h2>About Us</h2>
         <p>
           We specialize in reliable and efficient solutions for truckers and logistics professionals across the U.S.

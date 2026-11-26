@@ -2,7 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.http import HttpResponse
 from django.template.loader import get_template
-from xhtml2pdf import pisa
+try:
+    from xhtml2pdf import pisa
+except ImportError:
+    pisa = None
 
 from .forms import CarrierInfoForm, BankingForm, TermsForm, SignForm
 from .models import CarrierAgreement
@@ -116,6 +119,10 @@ def agreement_pdf(request, pk):
 
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = f'attachment; filename="Agreement_{obj.carrier_name}.pdf"'
+
+    if pisa is None:
+        messages.error(request, "xhtml2pdf library is not installed. Please run 'pip install xhtml2pdf'.")
+        return redirect('agreements:done')
 
     pisa_status = pisa.CreatePDF(html, dest=response)
     if pisa_status.err:

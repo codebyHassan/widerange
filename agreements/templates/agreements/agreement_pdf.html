@@ -162,7 +162,7 @@
     {% if obj.carrier_logo %}
       <img src="{{ obj.carrier_logo.url }}" alt="Carrier Logo">
     {% else %}
-      <img src="sttic/agreements/images/widerangelogo.png" alt="Carrier Logo">
+      <img src="static/agreements/images/widerangelogo.png" alt="Carrier Logo">
     {% endif %}
   </div>
 </div>
@@ -170,11 +170,10 @@
 <!-- BROKER INFO -->
 <h3>BROKER INFORMATION</h3>
 <table>
-  <tr><td>Broker Name:</td><td>WIDE RANGE LOGISTICS LLC</td></tr>
-  <tr><td>Address:</td><td>419 INTERLUDE RD NEW IBERIA, LA 70563</td></tr>
-  <tr><td>Zip:</td><td>70563</td></tr>
-  <tr><td>Phone:</td><td>(123) 456-7890</td></tr>
-  <tr><td>Email:</td><td>info@widerangelogistics.com</td></tr>
+  <tr><td>Broker Name:</td><td>{{ site_settings.company_name|default:'WIDE RANGE LOGISTICS LLC' }}</td></tr>
+  <tr><td>Address:</td><td>{{ site_settings.address|default:'419 INTERLUDE RD NEW IBERIA, LA 70563' }}</td></tr>
+  <tr><td>Phone:</td><td>{{ site_settings.phone|default:'(216) 677-1799' }}</td></tr>
+  <tr><td>Email:</td><td>{{ site_settings.email|default:'chris@northernstarlogisticsinc.com' }}</td></tr>
 </table>
 
 <!-- CARRIER INFO -->
@@ -197,7 +196,7 @@
 <h3>AGREEMENT DETAILS</h3>
 <div class="section">
   <p>
-    This Agreement is made between <b>WIDE Range Logistics LLC</b> (“Broker”) and
+    This Agreement is made between <b>{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}</b> (“Broker”) and
     <b>{{ obj.carrier_name }}</b> (“Carrier”) for the purpose of arranging transportation
     services in accordance with the terms and conditions herein.
   </p>

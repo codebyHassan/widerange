@@ -20,15 +20,15 @@
   <div class="p-3 border border-top-0 rounded-bottom info-section">
     <table class="w-100 info-table">
       <tr class="table-row">
-        <td><b>Broker Name:</b> WIDE RANGE LOGISTICS LLC.</td>
-        <td><b>USDOT Number:</b> USDOT# 2581295 </td>
+        <td><b>Broker Name:</b> {{ site_settings.company_name|default:'WIDE RANGE LOGISTICS LLC.' }}</td>
+        <td><b>USDOT Number:</b> {{ site_settings.usdot_number|default:'USDOT# 2581295' }}</td>
       </tr>
       <tr class="table-row">
-        <td><b>MC Number:</b> MC# 900028</td>
-        <td><b>Email:</b> <a href="mailto:chris@northernstarlogisticsinc.com">chris@northernstarlogisticsinc.com</a></td>
+        <td><b>MC Number:</b> {{ site_settings.mc_number|default:'MC# 900028' }}</td>
+        <td><b>Email:</b> <a href="mailto:{{ site_settings.email|default:'chris@northernstarlogisticsinc.com' }}">{{ site_settings.email|default:'chris@northernstarlogisticsinc.com' }}</a></td>
       </tr>
       <tr class="table-row">
-        <td colspan="2"><b>Address:</b> 419 INTERLUDE RD NEW IBERIA, LA 70563 </td>
+        <td colspan="2"><b>Address:</b> {{ site_settings.address|default:'419 INTERLUDE RD NEW IBERIA, LA 70563' }}</td>
       </tr>
     </table>
   </div>

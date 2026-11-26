@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow,noarchive">
     <meta name="googlebot" content="noarchive">
-    <title>WIDE Range Logistics LLC- Reliable Logistics Solutions</title>
+    <title>{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }} - {{ site_settings.tagline|default:'Reliable Logistics Solutions' }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{% static 'frontend//css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/styles.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
     
     <!-- Icons -->
@@ -37,10 +37,10 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <span class="hero-badge">WIDE Range Logistics LLC</span>
+                    <span class="hero-badge">{{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}</span>
                     <h1 id="heroTitle">Secure Steady Freight with Guaranteed Lanes</h1>
                     <p>
-                        Tired of chasing loads? Reserve your dedicated lane with WIDE Range Logistics LLC and enjoy
+                        Tired of chasing loads? Reserve your dedicated lane with {{ site_settings.company_name|default:'WIDE Range Logistics LLC' }} and enjoy
                         consistent weekly routes, reliable income, and full support — plus get your reservation fee
                         refunded after your first delivery. It's time to run smart, not hard.
                     </p>

@@ -10,13 +10,13 @@
     <meta name="robots" content="noarchive,index,follow">
     <meta name="googlebot" content="noarchive">
     <!-- Note: Update the favicon to your new company's logo -->
-    <link rel="icon" type="image/webp" href="assets/images/logo.webp" sizes="48x48">
-    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/webp" href="/static/agreements/images/logo.webp" sizes="48x48">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet">
-    <script src="../cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="../cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <style>
         /* CSS Reset & Base Styles */
@@ -1333,24 +1333,24 @@
                 <div class="broker-info-content">
                     <div class="broker-info-row">
                         <div class="broker-info-label">Broker Name:</div>
-                        <div class="broker-info-value">WIDE Range Logistics LLC.</div>
+                        <div class="broker-info-value">{{ site_settings.company_name|default:'WIDE Range Logistics LLC.' }}</div>
                     </div>
                     <div class="broker-info-row">
                         <div class="broker-info-label">USDOT Number:</div>
-                        <div class="broker-info-value">USDOT# 2248522</div>
+                        <div class="broker-info-value">{{ site_settings.usdot_number|default:'USDOT# 2248522' }}</div>
                     </div>
                     <div class="broker-info-row">
                         <div class="broker-info-label">MC Number:</div>
-                        <div class="broker-info-value">MC# 741715</div>
+                        <div class="broker-info-value">{{ site_settings.mc_number|default:'MC# 741715' }}</div>
                     </div>
                     <div class="broker-info-row">
                         <div class="broker-info-label">Email:</div>
                         <div class="broker-info-value"><a
-                                href="mailto:chris@northernstarlogisticsinc.com">chris@northernstarlogisticsinc.com</a></div>
+                                href="mailto:{{ site_settings.email|default:'chris@northernstarlogisticsinc.com' }}">{{ site_settings.email|default:'chris@northernstarlogisticsinc.com' }}</a></div>
                     </div>
                     <div class="broker-info-row full-width">
                         <div class="broker-info-label">Address:</div>
-                        <div class="broker-info-value">8340 HUNTING DRIVE, NORTH ROYALTON, OH 44133</div>
+                        <div class="broker-info-value">{{ site_settings.address|default:'8340 HUNTING DRIVE, NORTH ROYALTON, OH 44133' }}</div>
                     </div>
                 </div>
             </div>
@@ -1434,7 +1434,7 @@
                     <h3>CARRIER OBLIGATIONS</h3>
                     <p>CARRIER must submit proof of delivery with its invoices, and the invoices must reflect that CARRIER delivered the freight to its final destination. a. BROKER agrees to arrange for the transportation of a shipper's freight with CARRIER pursuant to the terms of this Agreement, and to comply with all federal, state, and local laws and regulations pertaining to the brokerage services covered by this Agreement.</p>
                     <p>The Parties agree that BROKER'S responsibilities under this Agreement are limited to arranging for the transportation of a shipper's freight with CARRIER, and not actually performing the transportation.</p>
-                    <p><b>SLOT FEE (REFUNDABLE):</b> The Carrier shall make a security deposit of $399 by direct payment, through instant payment methods to WIDE Range Logistics LLC. It is a refundable fee upon the first delivery, along with the payment of the load, for the securement of the load. Once carrier pays $399, carrier must get a Receipt for the Deposit Fee by the representative. The security deposit shall be refundable upon the termination of this Agreement, subject to any outstanding obligations or damages incurred by the Carrier. The Carrier may terminate this Agreement with one week's written notice to the Company. Broker is responsible for Detention.</p>
+                    <p><b>SLOT FEE (REFUNDABLE):</b> The Carrier shall make a security deposit of {{ site_settings.deposit_fee|default:'$399' }} by direct payment, through instant payment methods to {{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}. It is a refundable fee upon the first delivery, along with the payment of the load, for the securement of the load. Once carrier pays {{ site_settings.deposit_fee|default:'$399' }}, carrier must get a Receipt for the Deposit Fee by the representative. The security deposit shall be refundable upon the termination of this Agreement, subject to any outstanding obligations or damages incurred by the Carrier. The Carrier may terminate this Agreement with one week's written notice to the Company. Broker is responsible for Detention.</p>
                     <p><b>Accessorials/Incidentals:</b> To be eligible, Carrier must be checked in to shipper/receiver by the appointment time and submit all proof of detention, accessorials, and incidentals within 24-48 hours of delivery. Detention accrual begins 2 hours after appointment time if Broker is notified after 60 minutes of waiting. Provide time stamped BOL within 48 hours of delivery. Detention Rate: $40/hr after 2 hours (Max $200 per stop). Layover: $250. TONU: $200.</p>
                 </div>
                 <div class="terms-section">
@@ -1556,31 +1556,31 @@
                                     </tr>
                                     <tr>
                                         <td class="table-label">Company:</td>
-                                        <td class="table-value">WIDE Range Logistics LLC.</td>
+                                        <td class="table-value">{{ site_settings.company_name|default:'WIDE Range Logistics LLC.' }}</td>
                                         <td class="table-label">Company:</td>
                                         <td class="table-value" id="pdf-mobile-carrierName"></td>
                                     </tr>
                                     <tr>
                                         <td class="table-label">MC Number:</td>
-                                        <td class="table-value">MC# 741715</td>
+                                        <td class="table-value">{{ site_settings.mc_number|default:'MC# 741715' }}</td>
                                         <td class="table-label">USDOT/MC:</td>
                                         <td class="table-value" id="pdf-mobile-carrierUSDOT"></td>
                                     </tr>
                                     <tr>
                                         <td class="table-label">U.S. DOT:</td>
-                                        <td class="table-value">USDOT# 2248522</td>
+                                        <td class="table-value">{{ site_settings.usdot_number|default:'USDOT# 2248522' }}</td>
                                         <td class="table-label">Phone:</td>
                                         <td class="table-value" id="pdf-mobile-carrierPhone"></td>
                                     </tr>
                                     <tr>
                                         <td class="table-label">Email:</td>
-                                        <td class="table-value">chris@northernstarlogisticsinc.com</td>
+                                        <td class="table-value">{{ site_settings.email|default:'chris@northernstarlogisticsinc.com' }}</td>
                                         <td class="table-label">Date:</td>
                                         <td class="table-value" id="pdf-mobile-agreementDate"></td>
                                     </tr>
                                     <tr>
                                         <td class="table-label">Address:</td>
-                                        <td class="table-value" colspan="3">8340 HUNTING DRIVE, NORTH ROYALTON, OH 44133</td>
+                                        <td class="table-value" colspan="3">{{ site_settings.address|default:'8340 HUNTING DRIVE, NORTH ROYALTON, OH 44133' }}</td>
                                     </tr>
                                     <tr>
                                         <td class="table-label">Banking:</td>
@@ -1663,14 +1663,14 @@
                             </div>
                         </div>
                         <div class="pdf-logo">
-                            <img src="assets/images/logo.webp" alt="Northern Star Logistics Logo">
+                            <img src="/static/agreements/images/logo.webp" alt="WIDE Range Logistics Logo">
                         </div>
                     </div>
 
                     <!-- Intro Section -->
                     <div class="pdf-section">
                         <div class="pdf-section-content">
-                            <p>This Broker/Carrier Agreement is entered into by and between: <strong>WIDE Range Logistics LLC.</strong> (hereinafter "BROKER"), and <strong id="pdf-intro-carrierName"></strong> (hereinafter "CARRIER") on this date: <strong id="pdf-intro-agreementDate"></strong>.</p>
+                            <p>This Broker/Carrier Agreement is entered into by and between: <strong>{{ site_settings.company_name|default:'WIDE Range Logistics LLC.' }}</strong> (hereinafter "BROKER"), and <strong id="pdf-intro-carrierName"></strong> (hereinafter "CARRIER") on this date: <strong id="pdf-intro-agreementDate"></strong>.</p>
                             <p>This Agreement is intended to enhance the joint efforts of both entities in developing a more secure environment for the transportation of conveyances and cargo. The CARRIER agrees to develop, implement, and maintain a verifiable, documented program to enhance security procedures throughout its supply chain process, consistent with industry best practices.</p>
                         </div>
                     </div>
@@ -1695,7 +1695,7 @@
                     <div class="pdf-section">
                         <div class="pdf-section-title">SLOT FEE (REFUNDABLE)</div>
                         <div class="pdf-section-content">
-                            <p>The Carrier shall make a security deposit of $399 by direct payment through instant payment methods to WIDE Range Logistics LLC. This is a refundable fee, returned with the payment for the first delivered load, to secure the load. The Carrier must obtain a receipt for this deposit. The deposit is fully refundable upon termination of this Agreement, subject to any outstanding obligations or damages. The Carrier may terminate this Agreement with one week's written notice. Broker is responsible for Detention.</p>
+                            <p>The Carrier shall make a security deposit of {{ site_settings.deposit_fee|default:'$399' }} by direct payment through instant payment methods to {{ site_settings.company_name|default:'WIDE Range Logistics LLC' }}. This is a refundable fee, returned with the payment for the first delivered load, to secure the load. The Carrier must obtain a receipt for this deposit. The deposit is fully refundable upon termination of this Agreement, subject to any outstanding obligations or damages. The Carrier may terminate this Agreement with one week's written notice. Broker is responsible for Detention.</p>
                         </div>
                     </div>
 
@@ -1721,18 +1721,24 @@
                         <div class="pdf-signature-title">Signatures</div>
                         <table class="pdf-signature-table">
                             <tr>
-                                <td class="broker-header" colspan="2">BROKER: WIDE Range Logistics LLC.</td>
+                                <td class="broker-header" colspan="2">BROKER: {{ site_settings.company_name|default:'WIDE Range Logistics LLC.' }}</td>
                                 <td class="carrier-header" colspan="2">CARRIER: <span id="pdf-sig-carrierName"></span></td>
                             </tr>
                             <tr>
                                 <td class="sig-label">Signature:</td>
-                                <td class="sig-value"><img src="assets/images/signatures.png" alt="Broker Signature" class="signature-image"></td>
+                                <td class="sig-value">
+                                    {% if site_settings.broker_signature %}
+                                        <img src="{{ site_settings.broker_signature.url }}" alt="Broker Signature" class="signature-image">
+                                    {% else %}
+                                        <img src="/static/agreements/images/signatures.png" alt="Broker Signature" class="signature-image">
+                                    {% endif %}
+                                </td>
                                 <td class="sig-label">Signature:</td>
                                 <td class="sig-value"><span id="pdf-signature"></span></td>
                             </tr>
                             <tr>
                                 <td class="sig-label">Print Name:</td>
-                                <td class="sig-value">John Smith</td>
+                                <td class="sig-value">{{ site_settings.broker_signer_name|default:'Chris Mitchell' }}</td>
                                 <td class="sig-label">Print Name:</td>
                                 <td class="sig-value" id="pdf-printName"></td>
                             </tr>
