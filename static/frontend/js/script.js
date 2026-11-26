@@ -130,4 +130,55 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // 6. Number Counter Animation for Stats Strip
+    const statNumbers = document.querySelectorAll('.stat-number');
+    if (statNumbers.length > 0) {
+        let animated = false;
+        function formatNumber(val, compact) {
+            if (compact) {
+                if (val >= 1000000) return (val / 1000000).toFixed(0) + 'M';
+                if (val >= 1000) return (val / 1000).toFixed(0) + 'K';
+            }
+            return val.toLocaleString();
+        }
+
+        function runCounters() {
+            if (animated) return;
+            animated = true;
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target') || '0');
+                const isCompact = stat.getAttribute('data-compact') === 'true';
+                const suffix = stat.getAttribute('data-suffix') || '';
+                const duration = 1800;
+                const steps = 60;
+                const increment = target / steps;
+                let current = 0;
+                let step = 0;
+
+                const timer = setInterval(() => {
+                    step++;
+                    current += increment;
+                    if (step >= steps) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = formatNumber(Math.floor(current), isCompact) + suffix;
+                }, duration / steps);
+            });
+        }
+
+        if ('IntersectionObserver' in window) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    runCounters();
+                    statsObserver.disconnect();
+                }
+            }, { threshold: 0.3 });
+            const statsSection = document.querySelector('.stats-strip');
+            if (statsSection) statsObserver.observe(statsSection);
+        } else {
+            runCounters();
+        }
+    }
 });
